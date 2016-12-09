@@ -1,0 +1,77 @@
+div.timer {
+    border:2px #666666 solid;
+    width:190px;
+    height:50px;
+    line-height:50px;
+    font-size:36px;
+    font-family:"Courier New", Courier, monospace;
+    text-align:center;
+    margin:5px;
+    background-color: gray;
+}
+div.control button {
+    width: 80px;
+    height: 40px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #999;
+}
+
+div.control button:hover {
+    color: white;
+}
+
+div.control button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+td {
+    border: 2px #666666 solid;
+    width: 60px;
+    height: 60px;
+    line-height: 40px;
+    font-size: 30px;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    margin: 2px;
+    background-color: yellow;
+}
+
+td.selecting {
+    opacity: 0.0;
+
+    -webkit-animation: pulsate 1000ms ease-out;
+    -webkit-animation-iteration-count: infinite; 
+        
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+    
+    background:red;
+}
+
+td.selected{
+    background:red;
+}
+
+@-webkit-keyframes pulsate {
+    0% {opacity: 0.1;}
+    40% {opacity: 1.0;}
+    60% {opacity: 1.0;}
+    100% {opacity: 0.1;}
+}
