@@ -16,9 +16,9 @@
         <?php } ?>
     </table>
     <div class="control">
-        <button  onClick="roullet.start(200)" class="start-roullet">Start</button>
-        <button  onClick="roullet.stop()" class="stop-roullet">Stop</button> 
-        <button  onClick="roullet.reset()" class="reset-roullet">Reset</button>
+        <button  onClick="roullet.start(200)" class="start-roullet">スタート</button>
+        <button  onClick="roullet.stop()" class="stop-roullet">ストップ</button> 
+        <button  onClick="roullet.reset()" class="reset-roullet">リセット</button>
     </div>
 
 </body>
