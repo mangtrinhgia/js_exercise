@@ -20,6 +20,9 @@
         <button  onClick="roullet.stop()" class="stop-roullet">ストップ</button> 
         <button  onClick="roullet.reset()" class="reset-roullet">リセット</button>
     </div>
+    <div>
+        <a href="index.php"><button class="back">ホームページに戻る</button></a>
+    </div>
 
 </body>
 </html>
