@@ -80,7 +80,7 @@ td.selecting {
 }
 
 td.selected{
-    background:red;
+    background-color: red;
 }
 
 @-webkit-keyframes pulsate {

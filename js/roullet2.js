@@ -18,11 +18,11 @@ function _roullet(callback)
             {
                 if(randomValue >= 0){
                     console.log(randomValue);
-                    deleteFlickerCell(randomValue-1);
+                    deleteFlickerCell(randomValue);
                 }
                 
                 randomValue = getRandomInt(1, myArray.length);
-                generateFlickerCell(randomValue-1);
+                generateFlickerCell(randomValue);
 
                 if(typeof(callback) === 'function') callback(randomValue);
             }, interval);
@@ -49,7 +49,8 @@ function _roullet(callback)
     {
         randomValue = -1;
         this.stop('reset');
-        $('td.selecting').each(function(){
+        $('td').each(function(){
+            $(this).removeClass("selected");
             $(this).removeClass("selecting");
         });
         
@@ -73,17 +74,19 @@ function _roullet(callback)
     
     function generateFlickerCell(cell)
     {
-        $('td.column-' + myArray[cell]).addClass("selecting");
+        $('td.column-' + myArray[cell-1]).addClass("selecting");
     }
     
     function deleteFlickerCell(cell)
     {
-        $('td.column-' + myArray[cell]).removeClass("selecting");
+        $('td.column-' + myArray[cell-1]).removeClass("selecting");
     }
     
     function setCellSelected(cell)
     {
         alert("You selected the number:" + myArray[cell-1]);
+        $('td.column-' + myArray[cell-1]).addClass("selected");
+        $('td.column-' + myArray[cell-1]).removeClass("selecting");
         myArray.splice(cell-1, 1);
     }
     

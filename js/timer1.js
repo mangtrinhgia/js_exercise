@@ -1,5 +1,5 @@
-function _timer(callback)
-{
+function _timer(callback) 
+{ 
     var time = 0;
     var mode = 1;
     var status = 0;
@@ -8,7 +8,7 @@ function _timer(callback)
     this.start = function(interval)
     {
         interval = (typeof(interval) !== 'undefined') ? interval : 1000;
- 
+    
         if(status == 0)
         {
             status = 1;
@@ -45,7 +45,7 @@ function _timer(callback)
         if(status == 1)
         {
             status = 0;
-            clearInterval(timer_id);
+        clearInterval(timer_id);
         }
         document.getElementsByClassName("stop-timer")[0].style.display = 'none';
         document.getElementsByClassName("start-timer")[0].style.display = '';
@@ -99,8 +99,8 @@ function _timer(callback)
         document.querySelectorAll('div.timer span.minute')[0].innerHTML = minute;
         document.querySelectorAll('div.timer span.hour')[0].innerHTML = hour;
     }
-}
- 
+} 
+
 var timer;
 
 function ready(fn) {

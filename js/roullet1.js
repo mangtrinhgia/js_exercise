@@ -16,11 +16,11 @@ function _roullet(callback)
             roullet = setInterval(function()
             {
                 if(randomValue >= 0){
-                    deleteFlickerCell(randomValue-1);
+                    deleteFlickerCell(randomValue);
                 }
                 
                 randomValue = getRandomInt(1, myArray.length);
-                generateFlickerCell(randomValue-1);
+                generateFlickerCell(randomValue);
 
                 if(typeof(callback) === 'function') callback(randomValue);
             }, interval);
@@ -50,9 +50,10 @@ function _roullet(callback)
         // $('td.selecting').each(function(){
         //     $(this).removeClass("selecting");
         // });
-        var elements = document.querySelectorAll('td.selecting');
+        var elements = document.querySelectorAll('td');
         for (var i = 0; i < elements.length; i++) {
             removeClassPureJS(elements[i], "selecting");
+            removeClassPureJS(elements[i], "selected");
         }
     }
     
@@ -75,18 +76,20 @@ function _roullet(callback)
     function generateFlickerCell(cell)
     {
         // $('td.column-' + myArray[cell]).addClass("selecting");
-        addClassPureJS(document.querySelectorAll('td.column-' + myArray[cell])[0], "selecting");
+        addClassPureJS(document.querySelectorAll('td.column-' + myArray[cell-1])[0], "selecting");
     }
     
     function deleteFlickerCell(cell)
     {
         // $('td.column-' + myArray[cell]).removeClass("selecting");
-        removeClassPureJS(document.querySelectorAll('td.column-' + myArray[cell])[0], "selecting");
+        removeClassPureJS(document.querySelectorAll('td.column-' + myArray[cell-1])[0], "selecting");
     }
     
     function setCellSelected(cell)
     {
         alert("You have selected the number: " + myArray[cell-1]);
+        addClassPureJS(document.querySelectorAll('td.column-' + myArray[cell-1])[0], "selected");
+        removeClassPureJS(document.querySelectorAll('td.column-' + myArray[cell-1])[0], "selecting");
         myArray.splice(cell-1, 1);
     }
     
